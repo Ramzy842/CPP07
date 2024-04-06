@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 22:41:03 by rchahban          #+#    #+#             */
-/*   Updated: 2024/03/23 23:40:25 by rchahban         ###   ########.fr       */
+/*   Updated: 2024/04/03 19:46:16 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 #include <iostream>
 
-template <typename T, typename F> void iter(T add[], int len, F fn)
+template <typename T, typename F> void iter(T *add, int len, F fn)
 {
 	for (int x = 0; x < len; x++)
 	{
 		fn(add[x]);
 	}
 }
+
 
 #endif

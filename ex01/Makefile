@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 22:40:58 by rchahban          #+#    #+#              #
-#    Updated: 2024/03/23 22:53:57 by rchahban         ###   ########.fr        #
+#    Updated: 2024/04/03 19:49:12 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,20 +29,20 @@ NAME = main
 all: $(NAME)
 
 # Rule to generate the main executable from the object files
-$(NAME): $(OBJ)
-	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ) iter.hpp
+	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 # Rule to generate the object files from the source files
 %.o: %.cpp
-	$(CPP) $(CPPFLAGS) -c $< -o $@
+	@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 # Clean target to remove generated files
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 
 # Fclean target to remove executable files and finally perform clean
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 # Re target to rebuild the project from scratch
 re: fclean all
