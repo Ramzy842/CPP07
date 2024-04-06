@@ -22,7 +22,7 @@ class Array
 		T *arr;
 		unsigned int arrSize;
 	public:
-		Array()
+		Array() : arrSize(0)
 		{
 			this->arr = new T[this->arrSize];
 			std::cout << "Array constructor called" << std::endl;
@@ -30,30 +30,33 @@ class Array
 		~Array()
 		{
 			if (this->arrSize)
-				delete this->arrSize;
+				delete [] this->arr;
 			std::cout << "Array destructor called" << std::endl;
 		}
 		Array(unsigned int n) : arrSize(n)
 		{
 			this->arrSize = new T[this->arrSize];
-			std::cout << "Initialized array with " << this->arrSize << " elements." << std::endl;
+			std::cout << "Initialized array with " << this->size() << " elements." << std::endl;
 		}
-		Array(const Array& anotherArr)
+		Array(const Array& anotherArr) : arrSize(anotherArr.size())
 		{
 			*this = anotherArr;
 			std::cout << "Array copy constructor called" << std::endl;
 		}
 		Array& operator=(const Array& anotherArr)
 		{
-			if (this != &anotherArr)
+			if (this->arr)
+				delete [] this->arr;
+			if (this != &anotherArr && this->size() > 0)
 			{
 				this->arrSize = anotherArr.size();
-				this->arr = new T[this->size()];
-				for (int x = 0 ; x < this->arrSize; x++)
+				this->arr = new T[this->arrSize];
+				for (unsigned int x = 0 ; x < this->size(); x++)
 				{
 					this->arr[x] = anotherArr.arr[x];
 				}
 			}
+			return *this;
 		}
 		T& operator[](unsigned int index)
 		{
@@ -61,7 +64,7 @@ class Array
 				throw IndexOutOfBoundsException();
 			return this->arr[index];
 		}
-		unsigned int size()
+		unsigned int size() const
 		{
 			return this->arrSize;
 		}
@@ -72,7 +75,7 @@ class Array
 };
 
 template< typename T >
-const char	*Array<T>::InvalidIndexException::what() const throw()
+const char* Array<T>::InvalidIndexException::what() const throw()
 {
 	return ("Error: Index out of bounds");
 }
