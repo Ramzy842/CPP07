@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 01:58:09 by rchahban          #+#    #+#             */
-/*   Updated: 2024/03/24 01:58:10 by rchahban         ###   ########.fr       */
+/*   Updated: 2024/05/02 01:15:55 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ int main(int, char**)
                 std::cerr << "didn't save the same value!!" << std::endl;
                 return 1;
             }
-            // std::cout << "tmp[" << i << "]:\t" << tmp[i] << std::endl; //uncomment these two lines to see the arrays have the same values
-            // std::cout << "test[" << i << "]:\t" << test[i] << std::endl;
+            
         }
         }
         catch(const std::exception& e)
@@ -85,7 +84,7 @@ int main(int, char**)
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
-        // std::cout << "index was -2" << std::endl;
+        std::cout << "index was -2" << std::endl;
     }
     try
     {

@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 01:58:07 by rchahban          #+#    #+#             */
-/*   Updated: 2024/04/06 02:49:39 by rchahban         ###   ########.fr       */
+/*   Updated: 2024/05/02 01:12:51 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,17 +29,18 @@ class Array
 		}
 		~Array()
 		{
-			if (this->arrSize)
+			if (this->arr)
 				delete [] this->arr;
 			std::cout << "Array destructor called" << std::endl;
 		}
 		Array(unsigned int n) : arrSize(n)
 		{
-			this->arrSize = new T[this->arrSize];
+			this->arr = new T[this->arrSize];
 			std::cout << "Initialized array with " << this->size() << " elements." << std::endl;
 		}
 		Array(const Array& anotherArr) : arrSize(anotherArr.size())
 		{
+			this->arr = NULL;
 			*this = anotherArr;
 			std::cout << "Array copy constructor called" << std::endl;
 		}
@@ -47,7 +48,7 @@ class Array
 		{
 			if (this->arr)
 				delete [] this->arr;
-			if (this != &anotherArr && this->size() > 0)
+			if (this != &anotherArr && anotherArr.size() != 0)
 			{
 				this->arrSize = anotherArr.size();
 				this->arr = new T[this->arrSize];
@@ -61,7 +62,10 @@ class Array
 		T& operator[](unsigned int index)
 		{
 			if (this->arr == NULL || index >= this->size())
+			{
+				std::cout << "index: " << index << std::endl;
 				throw IndexOutOfBoundsException();
+			}
 			return this->arr[index];
 		}
 		unsigned int size() const
@@ -75,7 +79,7 @@ class Array
 };
 
 template< typename T >
-const char* Array<T>::InvalidIndexException::what() const throw()
+const char* Array<T>::IndexOutOfBoundsException::what() const throw()
 {
 	return ("Error: Index out of bounds");
 }
