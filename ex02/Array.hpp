@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 01:58:07 by rchahban          #+#    #+#             */
-/*   Updated: 2024/05/02 01:12:51 by rchahban         ###   ########.fr       */
+/*   Updated: 2024/05/05 16:54:15 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ class Array
 					this->arr[x] = anotherArr.arr[x];
 				}
 			}
+			std::cout << "Array copy assignment operator called" << std::endl;
 			return *this;
 		}
 		T& operator[](unsigned int index)
