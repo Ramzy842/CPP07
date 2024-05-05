@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 22:40:58 by rchahban          #+#    #+#              #
-#    Updated: 2024/03/23 22:53:57 by rchahban         ###   ########.fr        #
+#    Updated: 2024/05/05 17:06:35 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ NAME = main
 all: $(NAME)
 
 # Rule to generate the main executable from the object files
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) whatever.hpp
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 # Rule to generate the object files from the source files
