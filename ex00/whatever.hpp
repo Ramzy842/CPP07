@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 22:41:03 by rchahban          #+#    #+#             */
-/*   Updated: 2024/03/23 23:04:57 by rchahban         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:56:08 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ template <typename T> T max(T x, T y)
 		return y;
 	return y;
 }
-
+///
 #endif

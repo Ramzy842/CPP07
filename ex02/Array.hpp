@@ -6,7 +6,7 @@
 /*   By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 01:58:07 by rchahban          #+#    #+#             */
-/*   Updated: 2024/05/05 16:54:15 by rchahban         ###   ########.fr       */
+/*   Updated: 2024/05/05 19:57:15 by rchahban         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ class Array
 		{
 			if (this->arr)
 				delete [] this->arr;
-			if (this != &anotherArr && anotherArr.size() != 0)
+			if (this != &anotherArr && anotherArr.size() > 0)
 			{
 				this->arrSize = anotherArr.size();
 				this->arr = new T[this->arrSize];

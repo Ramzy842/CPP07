@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 22:40:58 by rchahban          #+#    #+#              #
-#    Updated: 2024/04/03 19:49:12 by rchahban         ###   ########.fr        #
+#    Updated: 2024/05/05 19:57:31 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJ) iter.hpp
 	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 # Rule to generate the object files from the source files
-%.o: %.cpp
+%.o: %.cpp iter.hpp
 	@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 # Clean target to remove generated files

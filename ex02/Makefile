@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/24 01:58:12 by rchahban          #+#    #+#              #
-#    Updated: 2024/05/05 17:06:48 by rchahban         ###   ########.fr        #
+#    Updated: 2024/05/05 19:55:03 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CPP = c++
 CPPFLAGS = -Werror -Wall -Wextra -std=c++98
 
 # Source files
-SRC = main.cpp
+SRC = main.cpp 
 
 # Object files generated from source files
 OBJ = $(SRC:.cpp=.o)
@@ -30,10 +30,10 @@ all: $(NAME)
 
 # Rule to generate the main executable from the object files
 $(NAME): $(OBJ) Array.hpp
-	@$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@$(CPP) $(CPPFLAGS)  $(OBJ)  -o $(NAME)
 
 # Rule to generate the object files from the source files
-%.o: %.cpp
+%.o: %.cpp Array.hpp
 	@$(CPP) $(CPPFLAGS) -c $< -o $@
 
 # Clean target to remove generated files

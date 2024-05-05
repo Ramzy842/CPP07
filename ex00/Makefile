@@ -6,7 +6,7 @@
 #    By: rchahban <rchahban@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/23 22:40:58 by rchahban          #+#    #+#              #
-#    Updated: 2024/05/05 17:06:35 by rchahban         ###   ########.fr        #
+#    Updated: 2024/05/05 19:55:30 by rchahban         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJ) whatever.hpp
 	$(CPP) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 # Rule to generate the object files from the source files
-%.o: %.cpp
+%.o: %.cpp whatever.hpp
 	$(CPP) $(CPPFLAGS) -c $< -o $@
 
 # Clean target to remove generated files
